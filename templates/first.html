@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application - Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>To-Do List Application</h1>
+    
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="title-section">
+            <img src="{% static 'list.png' %}" alt="Background Image" class="background-image">
+            <h1>Welcome to the To-Do List Application</h1>
+            <p>A simple and efficient way to manage your tasks and stay organized.</p>
+        </div>
+        <div id="about-section">
+            <h2>About</h2>
+            <p>The To-Do List Application is designed to help users keep track of their tasks and manage their time effectively. Whether you're organizing your daily schedule, planning long-term projects, or simply making a grocery list, this application provides the tools you need to stay on top of your tasks.</p>
+        </div>
+        <div class="features-content">
+            <h4>Features:</h4>
+            <ul>
+                <li>Create new tasks</li>
+                <li>View existing tasks</li>
+                <li>Update tasks</li>
+                <li>Delete tasks</li>
+                <li>Mark tasks as completed</li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Ready to experience the difference for yourself? Contact us today to learn more about our services, request a demo, or discuss how we can tailor a solution to meet your specific needs. We're here to support you every step of
+              the way on your journey to success.</p>
+      </div>
+    </main>
+    <footer>
+        <p>Follow us:</p>
+        <ul>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </ul>
+        <div class="footer-up">
+            &copy; 2024 TODOLIST. All rights reserved.
+        </div>
+    </footer>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<style>
+body {
+  font-family: Arial, sans-serif;  /* Clean, modern font */
+  margin: 0;  /* Remove default margins */
+  padding: 20px;  /* Add some breathing room */
+  background-color: #f5f5f5;  /* Light background for better readability */
+}
+
+h2 {
+  text-align: center;  
+  font-size: 40px;
+  margin-bottom: 40px;
+  padding-top: 100px;
+}
+
+form {
+  display: flex;  /* Use flexbox for better layout control */
+  flex-direction: column;
+  width: 300px;  /* Set a reasonable form width */
+  margin: 0 auto;  /* Center the form horizontally */
+  border: 1px solid #ccc;  /* Subtle border */
+  border-radius: 5px;  /* Rounded corners for a softer look */
+  padding: 20px;  /* Add some padding within the form */
+}
+
+label {
+  display: block;  /* Make labels display on their own line */
+  margin-bottom: 5px;
+  font-weight: bold; /* Slightly bolder text for labels */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;  /* Make inputs fill the form width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px; /* Rounded corners for inputs */
+  box-sizing: border-box;  /* Ensure padding doesn't shrink content area */
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;  /* Green submit button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;  /* Rounded submit button */
+  cursor: pointer;  /* Indicate clickable behavior */
+  margin-top: 10px; /* Add some space above the button */
+  transition: background-color 0.2s ease-in-out;  /* Smooth hover effect */
+}
+
+input[type="submit"]:hover {
+  background-color: #2a67b6;  /* Darker green on hover */
+}
+
+a {
+  color: #4CAF50;  /* Green link color */
+  text-decoration: none;  /* Remove underline from links */
+  transition: color 0.2s ease-in-out;  /* Smooth hover effect */
+}
+
+a:hover {
+  color: #2482ad;  /* Darker green on hover */
+}
+p {
+    text-align: center;
+}
+p:hover {
+    color: red;
+}
+</style>
+<body>
+    <h2>Signup Here <span>&#128071;</span></h2>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="Signup">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</body>
+</html>
